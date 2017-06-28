@@ -1,0 +1,30 @@
+{
+  "name": "bytic/omnipay-common",
+  "type": "library",
+  "license": "MIT",
+  "description": "Common classes for drivers extending ThePhpLeague Omnipay multi-payment processing library",
+  "keywords": [
+    "omnipay",
+    "pay",
+    "payment"
+  ],
+  "homepage": "https://github.com/ByTIC/omnipay-common",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ByTIC\\Omnipay\\Common\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "omnipay/common": "^2.3"
+  },
+  "require-dev": {
+    "omnipay/tests": "^2.0"
+  }
+}
