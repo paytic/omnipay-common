@@ -1,8 +1,11 @@
 <?php
+
+use ByTIC\Omnipay\Common\Library\View\View;
+
 /**
- * @var Nip\View $this
- * @var ByTIC\Common\Payments\Gateways\Providers\AbstractGateway\Message\CompletePurchaseResponse $response
+ * @var View $this
  */
+
 $response = $this->get('response');
 $model = $response->getModel();
 $messageType = $response->getMessageType();
@@ -49,7 +52,7 @@ $messageType = $response->getMessageType();
 
                 <p>
                     <?php
-                    echo $this->Messages()->$messageType($model->getManager()->getMessage('confirm.'.$model->status));
+                    echo $this->Messages()->$messageType($model->getManager()->getMessage('confirm.' . $model->status));
                     ?>
                 </p>
             <?php } else { ?>
@@ -66,9 +69,9 @@ $messageType = $response->getMessageType();
                 /** @noinspection PhpStaticAsDynamicMethodCallInspection */
                 echo $this->Messages()->error(
                     '<strong>'
-                    .translator()->translate('payment-gateways.messages.confirm.error.message')
-                    .'</strong>:<br />'
-                    .$response->getMessage()
+                    . translator()->translate('payment-gateways.messages.confirm.error.message')
+                    . '</strong>:<br />'
+                    . $response->getMessage()
                 );
                 echo '</p>';
             }
