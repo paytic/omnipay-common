@@ -41,6 +41,6 @@ trait SendDataRequestTrait
         $classNamespacePath = implode('\\', $partsClassName);
         $class = str_replace('Request', 'Response', $classFirstName);
 
-        return '\\' . $this->$classNamespacePath() . '\\' . $class;
+        return '\\' . $classNamespacePath . '\\' . $class;
     }
 }
