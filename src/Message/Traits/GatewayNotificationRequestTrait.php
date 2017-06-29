@@ -16,11 +16,12 @@ trait GatewayNotificationRequestTrait
      */
     public function getData()
     {
+        $data = [];
         if ($this->isValidNotification()) {
-            return $this->parseNotification();
+            $data['notification'] = $this->parseNotification();
         }
 
-        return [];
+        return $data;
     }
 
     /**
