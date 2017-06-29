@@ -35,6 +35,26 @@ trait GatewayNotificationRequestTrait
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getData()
+    {
+        if ($this->isProviderRequest()) {
+            $this->generateData();
+        }
+
+        return false;
+    }
+
+    /**
+     * @return bool|mixed
+     */
+    protected function generateData()
+    {
+        return false;
+    }
+
+    /**
      * @return bool
      */
     public function hasGet()
