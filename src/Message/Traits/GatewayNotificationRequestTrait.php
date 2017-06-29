@@ -2,8 +2,6 @@
 
 namespace ByTIC\Omnipay\Common\Message\Traits;
 
-use Omnipay\Common\Message\ResponseInterface;
-
 /**
  * Class GatewayNotificationRequestTrait
  * @package ByTIC\Omnipay\Common\Message\Traits
@@ -12,24 +10,32 @@ use Omnipay\Common\Message\ResponseInterface;
  */
 trait GatewayNotificationRequestTrait
 {
+
     /**
-     * Send the request
-     *
-     * @return ResponseInterface|bool
+     * @inheritdoc
      */
-    public function send()
+    public function getData()
     {
-        if ($this->isProviderRequest()) {
-            return parent::send();
+        $data = [];
+        if ($this->isValidNotification()) {
+            $data['notification'] = $this->parseNotification();
         }
 
-        return false;
+        return $data;
     }
 
     /**
      * @return bool
      */
-    protected function isProviderRequest()
+    protected function isValidNotification()
+    {
+        return false;
+    }
+
+    /**
+     * @return bool|mixed
+     */
+    protected function parseNotification()
     {
         return false;
     }
