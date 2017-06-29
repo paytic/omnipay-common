@@ -17,6 +17,9 @@ use Symfony\Component\HttpFoundation\Response as HttpResponse;
  */
 trait RedirectHtmlTrait
 {
+    use HasViewTrait;
+    use DataAccessorsTrait;
+
     /**
      * @return bool
      */
@@ -53,7 +56,7 @@ trait RedirectHtmlTrait
             return HttpResponse::create($output);
         }
 
-        throw new RuntimeException('Invalid redirect method "'.$this->getRedirectMethod().'".');
+        throw new RuntimeException('Invalid redirect method "' . $this->getRedirectMethod() . '".');
     }
 
     /**
@@ -73,7 +76,12 @@ trait RedirectHtmlTrait
      */
     public function getRedirectUrl()
     {
-        return $this->getRequest()->getEndpoint();
+        if (!$this->hasDataProperty('redirectUrl')) {
+            throw new \InvalidArgumentException(
+                "Missing paramenter redirectURL in ResponseMessage " . get_class($this)
+            );
+        }
+        return $this->getDataProperty('redirectUrl');
     }
 
     /**
@@ -106,11 +114,11 @@ trait RedirectHtmlTrait
         foreach ($this->getRedirectData() as $key => $value) {
             if (is_array($value)) {
                 foreach ($value as $iKey => $iValue) {
-                    $key = $key.'['.$iKey.']';
-                    $hiddenFields .= $this->generateHiddenInput($key, $iValue)."\n";
+                    $key = $key . '[' . $iKey . ']';
+                    $hiddenFields .= $this->generateHiddenInput($key, $iValue) . "\n";
                 }
             } else {
-                $hiddenFields .= $this->generateHiddenInput($key, $value)."\n";
+                $hiddenFields .= $this->generateHiddenInput($key, $value) . "\n";
             }
         }
 
@@ -124,7 +132,18 @@ trait RedirectHtmlTrait
      */
     public function getRedirectData()
     {
-        return $this->getData();
+        $data = $this->getData();
+        $data = $this->filterRedirectData($data);
+        return $data;
+    }
+
+    /**
+     * @param $data
+     * @return mixed
+     */
+    protected function filterRedirectData($data)
+    {
+        return $data;
     }
 
     /**
