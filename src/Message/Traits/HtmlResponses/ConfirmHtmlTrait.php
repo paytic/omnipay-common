@@ -15,9 +15,10 @@ use Omnipay\Common\Message\RequestInterface;
  */
 trait ConfirmHtmlTrait
 {
-    use HasButtonTrait;
-    use HasViewTrait;
     use DataAccessorsTrait;
+    use HasViewTrait;
+    use HasButtonTrait;
+    use HasRedirectUrlTrait;
 
     /**
      * @return string
