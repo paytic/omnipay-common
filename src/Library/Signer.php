@@ -21,7 +21,7 @@ class Signer
 
     /**
      * @param $content
-     * @return string
+     * @return array
      */
     public function sealContentWithRSA($content)
     {
