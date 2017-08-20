@@ -60,7 +60,7 @@ class Signer
     /**
      * @param null $certificateData
      */
-    public function setCertificateData($certificateData)
+    protected function setCertificateData($certificateData)
     {
         $this->certificateData = $certificateData;
     }
@@ -241,7 +241,7 @@ class Signer
     /**
      * @param null $privateKeyData
      */
-    public function setPrivateKeyData($privateKeyData)
+    protected function setPrivateKeyData($privateKeyData)
     {
         $this->privateKeyData = $privateKeyData;
     }
@@ -252,7 +252,7 @@ class Signer
         if ($key == null) {
             throw new Exception('Private Key must be set in order to use Signer');
         }
-        $this->setCertificateData($this->loadKey($key, self::KEY_TYPE_PRIVATE));
+        $this->setPrivateKeyData($this->loadKey($key, self::KEY_TYPE_PRIVATE));
     }
 
     /**
