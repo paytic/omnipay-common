@@ -11,7 +11,6 @@ use ByTIC\Omnipay\Common\Tests\AbstractTest;
  */
 class ViewTest extends AbstractTest
 {
-
     public function testGetSetPath()
     {
         $view = new View();

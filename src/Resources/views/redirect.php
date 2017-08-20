@@ -145,11 +145,13 @@ $response = $this->get('response');
                   id="form-gateway" method="POST" target="_top">
                 <?php echo $this->get('inputsHidden'); ?>
 
-                <?php if ($this->has('subtitle')) { ?>
+                <?php if ($this->has('subtitle')) {
+    ?>
                     <h4>
                         <?php echo $this->get('subtitle'); ?>
                     </h4>
-                <?php } ?>
+                <?php
+} ?>
                 <hr/>
 
                 <div class="sk-folding-cube">
