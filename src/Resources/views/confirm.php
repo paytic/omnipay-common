@@ -44,12 +44,14 @@ $messageType = $response->getMessageType();
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <?php if ($this->has('subtitle')) { ?>
+            <?php if ($this->has('subtitle')) {
+    ?>
                 <h4>
                     <?php echo $this->get('subtitle'); ?>
                 </h4>
                 <hr/>
-            <?php } ?>
+            <?php
+} ?>
 
             <p>&nbsp;</p>
 
@@ -70,31 +72,37 @@ $messageType = $response->getMessageType();
             </div>
 
 
-            <?php if ($response->isRedirect() || $response->hasButton()) { ?>
+            <?php if ($response->isRedirect() || $response->hasButton()) {
+                ?>
                 <?php $src = $response->isRedirect() ? $response->getRedirectUrl() : $response->getButtonHref() ?>
                 <?php $label = $response->hasButton() ? $response->getButtonLabel() : 'Click here to continue'; ?>
 
                 <form action="<?php echo $src ?>" name="form-confirm" id="form-confirm" method="POST">
-                    <?php if ($response->isRedirect()) { ?>
+                    <?php if ($response->isRedirect()) {
+                    ?>
                         <p>
                             <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                             Redirecting
                         </p>
-                    <?php } ?>
+                    <?php
+                } ?>
                     <button class="btn btn-success btn-md">
                         <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
                         <?php echo $response->getButtonLabel(); ?>
                     </button>
                 </form>
 
-            <?php if ($response->isRedirect()) { ?>
+            <?php if ($response->isRedirect()) {
+                    ?>
                 <script>
                     var timer = setTimeout(function () {
                         document.forms[0].submit();
                     }, 3000);
                 </script>
-            <?php } ?>
-            <?php } ?>
+            <?php
+                } ?>
+            <?php
+            } ?>
         </div>
     </div>
 </div>
