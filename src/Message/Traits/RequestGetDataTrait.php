@@ -43,5 +43,5 @@ trait RequestGetDataTrait
     /**
      * @return mixed
      */
-    public abstract function validate();
+    abstract public function validate();
 }
