@@ -40,9 +40,8 @@ class Signer
                 $exception
             );
         }
-        $outEncData = base64_encode($encData);
 
-        return $outEncData;
+        return [$encData, $envKeys];
     }
 
     /**
@@ -269,13 +268,5 @@ class Signer
     public function setPrivateKey($privateKey)
     {
         $this->privateKey = $privateKey;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCertificateEncoded()
-    {
-        return base64_encode($this->getCertificateData());
     }
 }
