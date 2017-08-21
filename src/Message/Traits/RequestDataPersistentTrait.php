@@ -23,6 +23,17 @@ trait RequestDataPersistentTrait
         return $this;
     }
 
+    /**
+     * @param $key
+     * @return bool
+     */
+    public function hasDataItem($key)
+    {
+        $this->checkInitData();
+
+        return isset($this->data[$key]);
+    }
+
     protected function checkInitData()
     {
         $this->data = is_array($this->data) ? $this->data : [];
