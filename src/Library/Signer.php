@@ -12,6 +12,8 @@ class Signer
 {
     const ERROR_LOAD_KEY = 0x10000001;
     const ERROR_ENCRYPT_DATA = 0x10000002;
+    const ERROR_DECRYPT_DATA = 0x10000003;
+
     const KEY_TYPE_PUBLIC = 1;
     const KEY_TYPE_PRIVATE = 2;
     protected $certificate = null;
@@ -42,6 +44,32 @@ class Signer
         }
 
         return [$encData, $envKeys];
+    }
+
+    /**
+     * @param $sealedData
+     * @param $envKey
+     * @return null
+     */
+    public function openContentWithRSA($sealedData, $envKey)
+    {
+        $key = $this->getPrivateKeyData();
+
+        $decryptedData = null;
+        try {
+            $result = openssl_open($sealedData, $decryptedData, $envKey, $key);
+            if ($result === false) {
+                throw new Exception();
+            }
+        } catch (Exception $exception) {
+            $this->throwExceptionOpenssl(
+                "Error while opening crypt data!",
+                self::ERROR_DECRYPT_DATA,
+                $exception
+            );
+        }
+
+        return $decryptedData;
     }
 
     /**
