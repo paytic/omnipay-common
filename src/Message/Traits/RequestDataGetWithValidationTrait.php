@@ -3,10 +3,10 @@
 namespace ByTIC\Omnipay\Common\Message\Traits;
 
 /**
- * Trait RequestGetDataTrait
+ * Trait RequestDataGetWithValidationTrait
  * @package ByTIC\Omnipay\Mobilpay\Message\Traits
  */
-trait RequestGetDataTrait
+trait RequestDataGetWithValidationTrait
 {
 
     /**
