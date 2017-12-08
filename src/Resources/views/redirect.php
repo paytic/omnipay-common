@@ -135,7 +135,11 @@ $response = $this->get('response');
 <body onload="document.forms[0].submit();">
 <div class="header">
     <h1>
-        <?php echo translator()->translate('payment-gateways.messages.redirect.header') ?>
+        <?php if ($this->has('title')) { ?>
+            <?php echo $this->get('title') ?>
+        <?php } else { ?>
+            Redirecting to Payment Platform
+        <?php } ?>
     </h1>
 </div>
 <div class="container">
@@ -160,7 +164,11 @@ $response = $this->get('response');
                 </div>
 
                 <p>
-                    <?php echo translator()->translate('payment-gateways.messages.redirect.explination') ?>
+                    <?php if ($this->has('title')) { ?>
+                        <?php echo $this->get('title') ?>
+                    <?php } else { ?>
+                        If you are not redirected in 5 seconds click the button below.
+                    <?php } ?>
                 </p>
                 <input type="submit" value="Go now" class="btn btn-success btn-lg"/>
             </form>

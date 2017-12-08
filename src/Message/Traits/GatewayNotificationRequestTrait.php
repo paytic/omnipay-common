@@ -10,18 +10,18 @@ namespace ByTIC\Omnipay\Common\Message\Traits;
  */
 trait GatewayNotificationRequestTrait
 {
+    use RequestDataPersistentTrait;
 
     /**
      * @inheritdoc
      */
     public function getData()
     {
-        $data = [];
         if ($this->isValidNotification()) {
-            $data['notification'] = $this->parseNotification();
+            $this->setDataItem('notification', $this->parseNotification());
         }
 
-        return $data;
+        return $this->getDataArray();
     }
 
     /**
