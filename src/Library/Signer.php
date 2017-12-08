@@ -23,7 +23,9 @@ class Signer
 
     /**
      * @param $content
+     *
      * @return array
+     * @throws Exception
      */
     public function sealContentWithRSA($content)
     {
@@ -49,7 +51,9 @@ class Signer
     /**
      * @param $sealedData
      * @param $envKey
+     *
      * @return null
+     * @throws Exception
      */
     public function openContentWithRSA($sealedData, $envKey)
     {
@@ -74,6 +78,7 @@ class Signer
 
     /**
      * @return string
+     * @throws Exception
      */
     public function getCertificateData()
     {
@@ -92,6 +97,9 @@ class Signer
         $this->certificateData = $certificateData;
     }
 
+    /**
+     * @throws Exception
+     */
     public function initCertificateData()
     {
         $certificate = $this->getCertificate();
@@ -255,6 +263,7 @@ class Signer
 
     /**
      * @return null
+     * @throws Exception
      */
     public function getPrivateKeyData()
     {
@@ -273,11 +282,14 @@ class Signer
         $this->privateKeyData = $privateKeyData;
     }
 
+    /**
+     * @throws Exception
+     */
     protected function initPrivateKeyData()
     {
         $key = $this->getPrivateKey();
         if ($key == null) {
-            throw new Exception('Private Key must be set in order to use Signer');
+            throw new Exception('Private Key must be set in order to use Signer',self::ERROR_LOAD_KEY);
         }
         $this->setPrivateKeyData($this->loadKey($key, self::KEY_TYPE_PRIVATE));
     }
