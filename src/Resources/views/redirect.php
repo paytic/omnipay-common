@@ -135,11 +135,15 @@ $response = $this->get('response');
 <body onload="document.forms[0].submit();">
 <div class="header">
     <h1>
-        <?php if ($this->has('title')) { ?>
+        <?php if ($this->has('title')) {
+    ?>
             <?php echo $this->get('title') ?>
-        <?php } else { ?>
+        <?php
+} else {
+        ?>
             Redirecting to Payment Platform
-        <?php } ?>
+        <?php
+    } ?>
     </h1>
 </div>
 <div class="container">
@@ -149,11 +153,13 @@ $response = $this->get('response');
                   id="form-gateway" method="POST" target="_top">
                 <?php echo $this->get('inputsHidden'); ?>
 
-                <?php if ($this->has('subtitle')) { ?>
+                <?php if ($this->has('subtitle')) {
+        ?>
                     <h4>
                         <?php echo $this->get('subtitle'); ?>
                     </h4>
-                <?php } ?>
+                <?php
+    } ?>
                 <hr/>
 
                 <div class="sk-folding-cube">
@@ -164,11 +170,15 @@ $response = $this->get('response');
                 </div>
 
                 <p>
-                    <?php if ($this->has('title')) { ?>
+                    <?php if ($this->has('title')) {
+        ?>
                         <?php echo $this->get('title') ?>
-                    <?php } else { ?>
+                    <?php
+    } else {
+        ?>
                         If you are not redirected in 5 seconds click the button below.
-                    <?php } ?>
+                    <?php
+    } ?>
                 </p>
                 <input type="submit" value="Go now" class="btn btn-success btn-lg"/>
             </form>

@@ -289,7 +289,7 @@ class Signer
     {
         $key = $this->getPrivateKey();
         if ($key == null) {
-            throw new Exception('Private Key must be set in order to use Signer',self::ERROR_LOAD_KEY);
+            throw new Exception('Private Key must be set in order to use Signer', self::ERROR_LOAD_KEY);
         }
         $this->setPrivateKeyData($this->loadKey($key, self::KEY_TYPE_PRIVATE));
     }
