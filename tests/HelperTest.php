@@ -27,7 +27,8 @@ class HelperTest extends AbstractTest
     {
         return [
             ['Test Iñtërnâtiônàlizætiøn', 'Test Internationalization'],
-            ['Test "Ț"', 'Test T']
+            ['Test "Ț"', 'Test T'],
+            ['Test for &quot;Html Entities&quot;', 'Test for Html Entities']
         ];
     }
 }
