@@ -91,11 +91,13 @@ class Helper
             'ƒ' => 'f',
             'ț' => 't',
             '"' => '',
+            '”' => '',
             "'" => '',
         ];
 
         $name = strtr($name, $trans);
         $name = iconv("UTF-8", "ASCII//TRANSLIT", $name);
+        $name = preg_replace('/[^a-zA-Z0-9 -]+/', ' ', $name);
 
         // LIMIT 64
         return $name;
