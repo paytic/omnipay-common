@@ -13,7 +13,7 @@ class Helper
      * @param string $name
      * @return string
      */
-    public static function formatPurchaseName($name)
+    public static function stripNonAscii($name)
     {
         $name = html_entity_decode($name);
 

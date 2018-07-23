@@ -17,7 +17,7 @@ class HelperTest extends AbstractTest
      */
     public function testFormatPurchaseName($name, $formatted)
     {
-        self::assertSame($formatted, Helper::formatPurchaseName($name));
+        self::assertSame($formatted, Helper::stripNonAscii($name));
     }
 
     /**
