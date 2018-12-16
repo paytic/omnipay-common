@@ -185,5 +185,8 @@ $response = $this->get('response');
         </div>
     </div>
 </div>
+<?php
+echo $this->get('footer_body');
+?>
 </body>
 </html>

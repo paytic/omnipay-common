@@ -137,6 +137,12 @@ class View implements ArrayAccess
         return $this;
     }
 
+    public function append($name, $value)
+    {
+        $valueOld = $this->get($name);
+        return $this->set($name, $valueOld . $value);
+    }
+
     //
     // ARRAY ACCESS METHODS
     //
