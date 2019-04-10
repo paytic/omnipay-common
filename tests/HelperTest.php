@@ -28,8 +28,8 @@ class HelperTest extends AbstractTest
         return [
             ['Test Iñtërnâtiônàlizætiøn', 'Test Internationalization'],
             ['Test "Ț"', 'Test T'],
-            ['Test for &rdquo;Html Entities&rdquo;', 'Test for Html Entities'],
-            ['Test for &quot;Html Entities&quot;', 'Test for Html Entities']
+            ['Test for &rdquo;Html Entities&rdquo;&#039;', 'Test for Html Entities'],
+            ['Test for permited symbols #$[]', 'Test for permited symbols #$[]']
         ];
     }
 }

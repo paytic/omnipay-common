@@ -15,7 +15,7 @@ class Helper
      */
     public static function stripNonAscii($name)
     {
-        $name = html_entity_decode($name);
+        $name = html_entity_decode($name, ENT_QUOTES);
 
         $trans = [
             'Š' => 'S',
@@ -97,9 +97,9 @@ class Helper
 
         $name = strtr($name, $trans);
         $name = iconv("UTF-8", "ASCII//TRANSLIT", $name);
-        $name = preg_replace('/[^a-zA-Z0-9 -]+/', ' ', $name);
+        $name = preg_replace('/[^a-zA-Z0-9\#\$\[\] -]+/', ' ', $name);
 
         // LIMIT 64
-        return $name;
+        return trim($name);
     }
 }
