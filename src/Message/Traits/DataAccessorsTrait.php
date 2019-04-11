@@ -15,9 +15,9 @@ trait DataAccessorsTrait
      * @param $name
      * @return mixed
      */
-    public function getDataProperty($name)
+    public function getDataProperty($name, $default = null)
     {
-        return $this->data[$name];
+        return isset($this->data[$name]) ? $this->data[$name] : $default;
     }
 
     /**
