@@ -27,10 +27,7 @@ trait GatewayNotificationRequestTrait
     /**
      * @return bool
      */
-    protected function isValidNotification()
-    {
-        return false;
-    }
+    abstract public function isValidNotification();
 
     /**
      * @return bool|mixed
