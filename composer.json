@@ -28,7 +28,7 @@
   "require": {
     "php": "^7.0",
     "ext-iconv": "*",
-    "omnipay/common": "^2.3"
+    "omnipay/common": "^3.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0",
