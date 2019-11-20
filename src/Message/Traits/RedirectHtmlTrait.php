@@ -114,8 +114,8 @@ trait RedirectHtmlTrait
         foreach ($this->getRedirectData() as $key => $value) {
             if (is_array($value)) {
                 foreach ($value as $iKey => $iValue) {
-                    $key = $key . '[' . $iKey . ']';
-                    $hiddenFields .= $this->generateHiddenInput($key, $iValue) . "\n";
+                    $nKey = $key . '[' . $iKey . ']';
+                    $hiddenFields .= $this->generateHiddenInput($nKey, $iValue) . "\n";
                 }
             } else {
                 $hiddenFields .= $this->generateHiddenInput($key, $value) . "\n";
