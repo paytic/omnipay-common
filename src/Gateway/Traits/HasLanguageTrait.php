@@ -29,4 +29,20 @@ trait HasLanguageTrait
     {
         return $this->language;
     }
+
+    /**
+     * @param $params
+     */
+    public function populateRequestLangParam(&$params)
+    {
+        if (isset($params['lang']) && !empty($params['lang'])) {
+            return;
+        }
+        $lang = $this->getLang();
+        if (empty($lang)) {
+            return;
+        }
+
+        $params['lang'] = $lang;
+    }
 }
