@@ -2,7 +2,7 @@
 
 namespace ByTIC\Omnipay\Common\Tests;
 
-use PHPUnit\Framework\TestCase;
+use Omnipay\Tests\TestCase;
 
 /**
  * Class AbstractTest
