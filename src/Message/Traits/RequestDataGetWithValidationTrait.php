@@ -41,7 +41,8 @@ trait RequestDataGetWithValidationTrait
     }
 
     /**
+     * @param array $args
      * @return mixed
      */
-    abstract public function validate();
+    abstract public function validate(...$args);
 }
