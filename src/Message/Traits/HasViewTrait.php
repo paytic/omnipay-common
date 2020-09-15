@@ -60,13 +60,19 @@ trait HasViewTrait
     protected function initView()
     {
         $view = $this->newView();
-        $view->setBasePath(
-            dirname(dirname(dirname(__FILE__)))
+        $view->setBasePath($this->generateViewPath());
+        $this->setView($view);
+    }
+
+    /**
+     * @return string
+     */
+    protected function generateViewPath()
+    {
+        return dirname(dirname(dirname(__FILE__)))
             . DIRECTORY_SEPARATOR . 'Resources'
             . DIRECTORY_SEPARATOR . 'views'
-            . DIRECTORY_SEPARATOR
-        );
-        $this->setView($view);
+            . DIRECTORY_SEPARATOR;
     }
 
     /**
