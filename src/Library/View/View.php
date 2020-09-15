@@ -127,6 +127,20 @@ class View implements ArrayAccess
     }
 
     /**
+     * @param string|array $key
+     * @param mixed $value
+     * @return $this
+     */
+    public function with($key, $value = null)
+    {
+        if (is_array($key)) {
+            $this->data = array_merge($this->data, $key);
+            return $this;
+        }
+        return $this->set($key, $value);
+    }
+
+    /**
      * @param string $name
      * @param mixed $value
      * @return $this
