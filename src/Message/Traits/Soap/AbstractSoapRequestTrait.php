@@ -102,8 +102,7 @@ trait AbstractSoapRequestTrait
             'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | SOAP_COMPRESSION_DEFLATE,
             'encoding' => 'utf-8',
             'exceptions' => true,
-            'connection_timeout' => $this->timeout,
-            'stream_context' => $context,
+            'connection_timeout' => $this->timeout
         ];
 
         // if we're in test mode, don't cache the wsdl
