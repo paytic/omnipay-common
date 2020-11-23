@@ -49,11 +49,11 @@ trait RedirectHtmlTrait
         }
 
         if ('GET' === $this->getRedirectMethod()) {
-            return HttpRedirectResponse::create($this->getRedirectUrl());
+            return new HttpRedirectResponse($this->getRedirectUrl());
         } elseif ('POST' === $this->getRedirectMethod()) {
             $output = $this->getRedirectHTML();
 
-            return HttpResponse::create($output);
+            return new HttpResponse($output);
         }
 
         throw new RuntimeException('Invalid redirect method "' . $this->getRedirectMethod() . '".');
