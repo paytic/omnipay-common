@@ -27,7 +27,7 @@
     }
   },
   "require": {
-    "php": "^7.0",
+    "php": "^7.1",
     "ext-iconv": "*",
     "omnipay/common": "^2.3",
     "bytic/data-objects": "^1.0"
