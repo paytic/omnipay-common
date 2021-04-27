@@ -19,3 +19,6 @@
 [link-code-quality]: https://scrutinizer-ci.com/g/bytic/omnipay-common
 [link-downloads]: https://packagist.org/packages/bytic/omnipay-common
 [link-author]: https://github.com/bytic
+
+### Inspiration
+* https://github.com/Payum/Payum

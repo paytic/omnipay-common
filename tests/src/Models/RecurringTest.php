@@ -1,8 +1,9 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests;
+namespace ByTIC\Omnipay\Common\Tests\Models;
 
-use ByTIC\Omnipay\Common\Recurring;
+use ByTIC\Omnipay\Common\Models\Recurring;
+use ByTIC\Omnipay\Common\Tests\AbstractTest;
 
 /**
  * Class RecurringTest

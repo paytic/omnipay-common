@@ -1,16 +1,16 @@
 <?php
 
-namespace ByTIC\Omnipay\Common;
+namespace ByTIC\Omnipay\Common\Models;
 
-use Omnipay\Common\ParametersTrait;
+use ByTIC\Omnipay\Common\Models\Traits\HasParametersTrait;
 
 /**
  * Class Recurring
- * @package ByTIC\Omnipay\Common
+ * @package ByTIC\Omnipay\Common\Models
  */
 class Recurring
 {
-    use ParametersTrait;
+    use HasParametersTrait;
 
     const DAILY = 'daily';
     const MONTHLY = 'monthly';
