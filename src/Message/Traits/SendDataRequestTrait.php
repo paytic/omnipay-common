@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits;
+namespace Paytic\Omnipay\Common\Message\Traits;
 
 use Omnipay\Common\Message\ResponseInterface;
 
 /**
  * Trait SendDataRequestTrait
- * @package ByTIC\Omnipay\Common\Message\Traits
+ * @package Paytic\Omnipay\Common\Message\Traits
  *
  * @property ResponseInterface $response
  */

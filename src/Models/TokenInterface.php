@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Models;
+namespace Paytic\Omnipay\Common\Models;
 
 /**
  * Interface TokenInterface
- * @package ByTIC\Omnipay\Common\Models
+ * @package Paytic\Omnipay\Common\Models
  */
 interface TokenInterface
 {

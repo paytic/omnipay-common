@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests\Models;
+namespace Paytic\Omnipay\Common\Tests\Models;
 
-use ByTIC\Omnipay\Common\Models\Recurring;
-use ByTIC\Omnipay\Common\Tests\AbstractTest;
+use Paytic\Omnipay\Common\Models\Recurring;
+use Paytic\Omnipay\Common\Tests\AbstractTest;
 
 /**
  * Class RecurringTest
- * @package ByTIC\Omnipay\Common\Tests
+ * @package Paytic\Omnipay\Common\Tests
  */
 class RecurringTest extends AbstractTest
 {

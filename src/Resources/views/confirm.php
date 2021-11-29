@@ -1,6 +1,6 @@
 <?php
 
-use ByTIC\Omnipay\Common\Library\View\View;
+use Paytic\Omnipay\Common\Library\View\View;
 
 /**
  * @var View $this

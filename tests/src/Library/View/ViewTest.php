@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests\Library\View;
+namespace Paytic\Omnipay\Common\Tests\Library\View;
 
-use ByTIC\Omnipay\Common\Library\View\View;
-use ByTIC\Omnipay\Common\Tests\AbstractTest;
+use Paytic\Omnipay\Common\Library\View\View;
+use Paytic\Omnipay\Common\Tests\AbstractTest;
 
 /**
  * Class ViewTest
- * @package ByTIC\Omnipay\Common\Tests\Library\View
+ * @package Paytic\Omnipay\Common\Tests\Library\View
  */
 class ViewTest extends AbstractTest
 {

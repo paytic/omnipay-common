@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Gateway\Traits;
+namespace Paytic\Omnipay\Common\Gateway\Traits;
 
 /**
  * Trait HasLanguageRequestTrait
- * @package ByTIC\Omnipay\Common\Gateway\Traits
+ * @package Paytic\Omnipay\Common\Gateway\Traits
  */
 trait HasLanguageTrait
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests;
+namespace Paytic\Omnipay\Common\Tests;
 
 use Omnipay\Tests\TestCase;
 

@@ -1,14 +1,14 @@
 <?php
 
 
-namespace ByTIC\Omnipay\Common\Tests\Message\Traits;
+namespace Paytic\Omnipay\Common\Tests\Message\Traits;
 
-use ByTIC\Omnipay\Common\Tests\AbstractTest;
-use ByTIC\Omnipay\Common\Tests\Fixtures\Message\PurchaseRequest;
+use Paytic\Omnipay\Common\Tests\AbstractTest;
+use Paytic\Omnipay\Common\Tests\Fixtures\Message\PurchaseRequest;
 
 /**
  * Class RequestDataGetWithValidationTraitTest
- * @package ByTIC\Omnipay\Common\Tests\Message\Traits
+ * @package Paytic\Omnipay\Common\Tests\Message\Traits
  */
 class RequestDataGetWithValidationTraitTest extends AbstractTest
 {

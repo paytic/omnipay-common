@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Models\Traits;
+namespace Paytic\Omnipay\Common\Models\Traits;
 
 use Omnipay\Common\Helper;
 use Symfony\Component\HttpFoundation\ParameterBag;

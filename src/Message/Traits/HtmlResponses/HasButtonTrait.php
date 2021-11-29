@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits\HtmlResponses;
+namespace Paytic\Omnipay\Common\Message\Traits\HtmlResponses;
 
 /**
  * Trait HasButtonTrait
- * @package ByTIC\Omnipay\Common\Message\Traits\HtmlResponses
+ * @package Paytic\Omnipay\Common\Message\Traits\HtmlResponses
  */
 trait HasButtonTrait
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits;
+namespace Paytic\Omnipay\Common\Message\Traits;
 
-use ByTIC\Omnipay\Common\Library\View\View;
+use Paytic\Omnipay\Common\Library\View\View;
 
 /**
  * Trait HasViewTrait
- * @package ByTIC\Omnipay\Common\Message\Traits
+ * @package Paytic\Omnipay\Common\Message\Traits
  */
 trait HasViewTrait
 {

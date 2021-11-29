@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests\Gateway\Traits;
+namespace Paytic\Omnipay\Common\Tests\Gateway\Traits;
 
-use ByTIC\Omnipay\Common\Tests\AbstractTest;
-use ByTIC\Omnipay\Common\Tests\Fixtures\Gateway;
+use Paytic\Omnipay\Common\Tests\AbstractTest;
+use Paytic\Omnipay\Common\Tests\Fixtures\Gateway;
 
 /**
  * Class HasLanguageTraitTest
- * @package ByTIC\Omnipay\Common\Tests\Gateway\Traits
+ * @package Paytic\Omnipay\Common\Tests\Gateway\Traits
  */
 class HasLanguageTraitTest extends AbstractTest
 {

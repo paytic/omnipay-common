@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits;
+namespace Paytic\Omnipay\Common\Message\Traits;
 
-use ByTIC\Omnipay\Common\Models\Token;
+use Paytic\Omnipay\Common\Models\Token;
 
 /**
  * Trait HasTokenTrait
- * @package ByTIC\Omnipay\Common\Message\Traits
+ * @package Paytic\Omnipay\Common\Message\Traits
  */
 trait HasTokenTrait
 {

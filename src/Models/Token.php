@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Models;
+namespace Paytic\Omnipay\Common\Models;
 
-use ByTIC\Omnipay\Common\Models\Traits\HasParametersTrait;
+use Paytic\Omnipay\Common\Models\Traits\HasParametersTrait;
 use Nip\Utility\Date;
 
 /**
  * Class Token
- * @package ByTIC\Omnipay\Common\Models
+ * @package Paytic\Omnipay\Common\Models
  */
 class Token implements TokenInterface
 {

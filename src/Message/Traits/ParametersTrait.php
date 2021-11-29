@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits;
+namespace Paytic\Omnipay\Common\Message\Traits;
 
 use Omnipay\Common\CreditCard;
 use Omnipay\Common\Exception\InvalidRequestException;
@@ -8,7 +8,7 @@ use Omnipay\Common\Helper;
 
 /**
  * Trait ParametersTrait
- * @package ByTIC\Omnipay\Common\Message\Traits
+ * @package Paytic\Omnipay\Common\Message\Traits
  */
 trait ParametersTrait
 {

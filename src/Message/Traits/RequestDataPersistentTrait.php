@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits;
+namespace Paytic\Omnipay\Common\Message\Traits;
 
 /**
  * Trait RequestDataPersistentTrait

@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Library\View;
+namespace Paytic\Omnipay\Common\Library\View;
 
 use ArrayAccess;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests\Fixtures;
+namespace Paytic\Omnipay\Common\Tests\Fixtures;
 
-use ByTIC\Omnipay\Common\Gateway\Traits\HasLanguageTrait;
+use Paytic\Omnipay\Common\Gateway\Traits\HasLanguageTrait;
 
 /**
  * Class Gateway
- * @package ByTIC\Omnipay\Common\Tests\Fixtures
+ * @package Paytic\Omnipay\Common\Tests\Fixtures
  */
 class Gateway
 {

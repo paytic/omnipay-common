@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Library;
+namespace Paytic\Omnipay\Common\Library;
 
 use Exception;
 
 /**
  * Class Signer
- * @package ByTIC\Omnipay\Common\Library
+ * @package Paytic\Omnipay\Common\Library
  */
 class Signer
 {

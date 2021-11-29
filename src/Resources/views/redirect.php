@@ -1,10 +1,10 @@
 <?php
 
-use ByTIC\Omnipay\Common\Library\View\View;
+use Paytic\Omnipay\Common\Library\View\View;
 
 /**
  * @var View $this
- * @var \ByTIC\Omnipay\Common\Message\Traits\RedirectHtmlTrait $response
+ * @var \Paytic\Omnipay\Common\Message\Traits\RedirectHtmlTrait $response
  */
 $response = $this->get('response');
 ?>

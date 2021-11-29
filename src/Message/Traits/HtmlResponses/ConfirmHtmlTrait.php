@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits\HtmlResponses;
+namespace Paytic\Omnipay\Common\Message\Traits\HtmlResponses;
 
-use ByTIC\Omnipay\Common\Message\Traits\DataAccessorsTrait;
-use ByTIC\Omnipay\Common\Message\Traits\HasViewTrait;
+use Paytic\Omnipay\Common\Message\Traits\DataAccessorsTrait;
+use Paytic\Omnipay\Common\Message\Traits\HasViewTrait;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class RedirectHtmlTrait
- * @package ByTIC\Omnipay\Common\Message\Traits
+ * @package Paytic\Omnipay\Common\Message\Traits
  *
  * @method RequestInterface getRequest
  * @method array getData

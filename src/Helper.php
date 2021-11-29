@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Common;
+namespace Paytic\Omnipay\Common;
 
 /**
  * Class Helper

@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests\Library;
+namespace Paytic\Omnipay\Common\Tests\Library;
 
-use ByTIC\Omnipay\Common\Library\Signer;
-use ByTIC\Omnipay\Common\Tests\AbstractTest;
+use Paytic\Omnipay\Common\Library\Signer;
+use Paytic\Omnipay\Common\Tests\AbstractTest;
 
 /**
  * Class SignerTest
- * @package ByTIC\Omnipay\Common\Tests\Library
+ * @package Paytic\Omnipay\Common\Tests\Library
  */
 class SignerTest extends AbstractTest
 {

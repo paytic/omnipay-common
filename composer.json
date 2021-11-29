@@ -1,5 +1,5 @@
 {
-  "name": "bytic/omnipay-common",
+  "name": "paytic/omnipay-common",
   "type": "library",
   "license": "MIT",
   "description": "Common classes for drivers extending ThePhpLeague Omnipay multi-payment processing library",
@@ -8,7 +8,7 @@
     "pay",
     "payment"
   ],
-  "homepage": "https://github.com/ByTIC/omnipay-common",
+  "homepage": "https://github.com/paytic/omnipay-common",
   "authors": [
     {
       "name": "Gabriel Solomon",
@@ -17,13 +17,13 @@
   ],
   "autoload": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Common\\": "src/"
+      "Paytic\\Omnipay\\Common\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Common\\Tests\\": "tests/src",
-      "ByTIC\\Omnipay\\Common\\Tests\\Fixtures\\": "tests/fixtures"
+      "Paytic\\Omnipay\\Common\\Tests\\": "tests/src",
+      "Paytic\\Omnipay\\Common\\Tests\\Fixtures\\": "tests/fixtures"
     }
   },
   "require": {
@@ -33,6 +33,7 @@
     "bytic/data-objects": "^1.0"
   },
   "require-dev": {
+    "omnipay/tests": " ^3|^4",
     "bytic/phpqatools": "^1.0",
     "mockery/mockery": "^1.0",
     "php-http/mock-client": "^1"

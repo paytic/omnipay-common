@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Message\Traits;
+namespace Paytic\Omnipay\Common\Message\Traits;
 
 use Omnipay\Common\Exception\RuntimeException;
 use Omnipay\Common\Message\RedirectResponseInterface;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 /**
  * Class RedirectHtmlTrait
- * @package ByTIC\Omnipay\Common\Message\Traits
+ * @package Paytic\Omnipay\Common\Message\Traits
  *
  * @method RequestInterface getRequest
  * @method array getData

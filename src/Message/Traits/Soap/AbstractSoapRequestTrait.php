@@ -1,13 +1,13 @@
 <?php /** @noinspection PhpComposerExtensionStubsInspection */
 
-namespace ByTIC\Omnipay\Common\Message\Traits\Soap;
+namespace Paytic\Omnipay\Common\Message\Traits\Soap;
 
 use SoapClient;
 use SoapFault;
 
 /**
  * Trait AbstractSoapRequestTrait
- * @package ByTIC\Omnipay\Common\Message\Traits\Soap
+ * @package Paytic\Omnipay\Common\Message\Traits\Soap
  */
 trait AbstractSoapRequestTrait
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Common\Tests\Models;
+namespace Paytic\Omnipay\Common\Tests\Models;
 
-use ByTIC\Omnipay\Common\Models\Token;
-use ByTIC\Omnipay\Common\Tests\AbstractTest;
+use Paytic\Omnipay\Common\Models\Token;
+use Paytic\Omnipay\Common\Tests\AbstractTest;
 use Nip\Utility\Date;
 
 /**
  * Class TokenTest
- * @package ByTIC\Omnipay\Common\Tests
+ * @package Paytic\Omnipay\Common\Tests
  */
 class TokenTest extends AbstractTest
 {
