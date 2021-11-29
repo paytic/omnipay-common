@@ -61,7 +61,7 @@ class Signer
 
         $decryptedData = null;
         try {
-            $result = openssl_open($sealedData, $decryptedData, $envKey, $key);
+            $result = openssl_open($sealedData, $decryptedData, $envKey, $key, "RC4");
             if ($result === false) {
                 throw new Exception();
             }
