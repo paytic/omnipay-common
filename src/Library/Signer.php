@@ -33,7 +33,7 @@ class Signer
         $encData = null;
         $envKeys = null;
         try {
-            $result = openssl_seal($content, $encData, $envKeys, [$key]);
+            $result = openssl_seal($content, $encData, $envKeys, [$key], "RC4");
             if ($result === false) {
                 throw new Exception();
             }
