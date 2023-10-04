@@ -1,6 +1,7 @@
 .idea/workspace.xml
 
 vendor/
+tests/.env
 
 .phpunit.result.cache
 
