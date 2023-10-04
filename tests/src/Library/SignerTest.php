@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\Omnipay\Common\Tests\Library;
 
 use Paytic\Omnipay\Common\Library\Signer;
@@ -24,5 +26,18 @@ FljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQE
 B/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5Ksi
 NG9zpgmLCUYuLkxpLQIDAQAB
 -----END PUBLIC KEY-----', $key);
+    }
+
+    public function testSealContentWithRSA()
+    {
+        $content = 'test';
+        $signer = new Signer();
+        $signer->setCertificate(file_get_contents(TEST_FIXTURE_PATH . '/ssl/keys/mobilpay_certificate.cert'));
+
+        $result = $signer->sealContentWithRSA($content);
+
+        static::assertCount(2, $result);
+        static::assertIsString($result[0]);
+        static::assertIsArray($result[1]);
     }
 }

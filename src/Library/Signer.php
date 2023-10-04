@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\Omnipay\Common\Library;
 
 use Exception;
+use phpseclib3\Crypt\RC4;
 
 /**
  * Class Signer
@@ -10,12 +13,13 @@ use Exception;
  */
 class Signer
 {
-    const ERROR_LOAD_KEY = 0x10000001;
-    const ERROR_ENCRYPT_DATA = 0x10000002;
-    const ERROR_DECRYPT_DATA = 0x10000003;
+    public const ERROR_LOAD_KEY = 0x10000001;
+    public const ERROR_ENCRYPT_DATA = 0x10000002;
+    public const ERROR_DECRYPT_DATA = 0x10000003;
 
-    const KEY_TYPE_PUBLIC = 1;
-    const KEY_TYPE_PRIVATE = 2;
+    public const KEY_TYPE_PUBLIC = 1;
+    public const KEY_TYPE_PRIVATE = 2;
+
     protected $certificate = null;
     protected $certificateData = null;
     protected $privateKey = null;
@@ -27,13 +31,13 @@ class Signer
      * @return array
      * @throws Exception
      */
-    public function sealContentWithRSA($content)
+    public function sealContentWithRSA($content, $cipher_algo = 'RC4')
     {
         $key = $this->getCertificateData();
-        $encData = null;
-        $envKeys = null;
+        $encData = '';
+        $envKeys = [];
         try {
-            $result = openssl_seal($content, $encData, $envKeys, [$key], "RC4");
+            $result = $this->opensslSeal($content, $encData, $envKeys, [$key], $cipher_algo);
             if ($result === false) {
                 throw new Exception();
             }
@@ -158,7 +162,7 @@ class Signer
             && is_file($key)
             && substr($key, 0, 7) != 'file://'
         ) {
-            $key = 'file://'.$key;
+            $key = 'file://' . $key;
         }
 
         return $key;
@@ -223,11 +227,11 @@ class Signer
     {
         $message = $message ? $message : "Error open ssl!";
         if ($exception) {
-            $message .= " Exception:".$exception->getMessage();
+            $message .= " Exception:" . $exception->getMessage();
         }
         $message .= " Reason:";
         while (($errorString = openssl_error_string())) {
-            $message .= $errorString."\n";
+            $message .= $errorString . "\n";
         }
         $code = $code ? $code : self::ERROR_ENCRYPT_DATA;
         throw new Exception($message, $code);
@@ -308,5 +312,79 @@ class Signer
     public function setPrivateKey($privateKey)
     {
         $this->privateKey = $privateKey;
+    }
+
+    private function opensslSeal(
+        string $data,
+        string &$sealed_data,
+        array &$encrypted_keys,
+        array $public_key,
+        string $cipher_algo
+    ): int|false {
+        $cipher_algo = strtolower($cipher_algo);
+        // check if RC4 is used
+        if (strcasecmp($cipher_algo, "rc4") !== 0) {
+            return openssl_seal($data, $sealed_data, $encrypted_keys, $public_key, $cipher_algo);
+        }
+
+        $result = false;
+        // make sure that there is at least one public key to use
+        if (count($public_key) >= 1) {
+            // generate the intermediate key
+            $intermediate = openssl_random_pseudo_bytes(16, $strong_result);
+
+            // check if we got strong random data
+            if ($strong_result) {
+                // encrypt the file key with the intermediate key
+                // using our own RC4 implementation
+                $sealed_data = $this->rc4Encrypt($data, $intermediate);
+                if (strlen($sealed_data) === strlen($data)) {
+                    // prepare the encrypted keys
+                    $encrypted_keys = [];
+
+                    // iterate over the public keys and encrypt the intermediate
+                    // for each of them with RSA
+                    foreach ($public_key as $tmp_key) {
+                        if (openssl_public_encrypt($intermediate, $tmp_output, $tmp_key, OPENSSL_PKCS1_PADDING)) {
+                            $encrypted_keys[] = $tmp_output;
+                        }
+                    }
+
+                    // set the result if everything worked fine
+                    if (count($public_key) === count($encrypted_keys)) {
+                        $result = strlen($sealed_data);
+                    }
+                }
+            }
+        }
+        return $result ?? false;
+    }
+
+    /**
+     * Uses phpseclib RC4 implementation
+     */
+    private function rc4Decrypt(
+        string $data,
+        string $secret
+    ): string {
+        $rc4 = new RC4();
+        /** @psalm-suppress InternalMethod */
+        $rc4->setKey($secret);
+
+        return $rc4->decrypt($data);
+    }
+
+    /**
+     * Uses phpseclib RC4 implementation
+     */
+    private function rc4Encrypt(
+        string $data,
+        string $secret
+    ): string {
+        $rc4 = new RC4();
+        /** @psalm-suppress InternalMethod */
+        $rc4->setKey($secret);
+
+        return $rc4->encrypt($data);
     }
 }
