@@ -31,7 +31,7 @@
     "ext-iconv": "*",
     "omnipay/common": "^3.0",
     "bytic/data-objects": "^1.0",
-    "symfony/http-client": "^6.3",
+    "symfony/http-client": "^6.0",
     "phpseclib/phpseclib": "~3.0"
   },
   "require-dev": {
