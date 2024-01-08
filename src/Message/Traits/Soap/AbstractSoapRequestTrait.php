@@ -1,5 +1,6 @@
 <?php
-/** @noinspection PhpComposerExtensionStubsInspection */
+
+declare(strict_types=1);
 
 namespace Paytic\Omnipay\Common\Message\Traits\Soap;
 
@@ -72,8 +73,8 @@ trait AbstractSoapRequestTrait
             $this->soapClient = new SoapClient($this->getSoapEndpoint(), $options);
 
             return $this->soapClient;
-        } catch (SoapFault $sf) {
-            throw new Exception($sf->getMessage(), $sf->getCode());
+        } catch (SoapFault $soapFault) {
+            throw new Exception($soapFault->getMessage(), $soapFault->getCode());
         }
     }
 
@@ -113,11 +114,11 @@ trait AbstractSoapRequestTrait
         ];
 
         // if we're in test mode, don't cache the wsdl
-        if ($this->getTestMode()) {
-            $options['cache_wsdl'] = WSDL_CACHE_NONE;
-        } else {
-            $options['cache_wsdl'] = WSDL_CACHE_BOTH;
-        }
+//        if ($this->getTestMode()) {
+//            $options['cache_wsdl'] = WSDL_CACHE_NONE;
+//        } else {
+//            $options['cache_wsdl'] = WSDL_CACHE_BOTH;
+//        }
         $options['cache_wsdl'] = WSDL_CACHE_NONE;
 
         return $options;
@@ -131,7 +132,13 @@ trait AbstractSoapRequestTrait
     /**
      * @return string
      */
-    abstract public function getSoapEndpoint();
+    public function getSoapEndpoint()
+    {
+        if (method_exists($this, 'getEndpoint')) {
+            return $this->getEndpoint();
+        }
+        throw new Exception('Missing getEndpoint or getSoapEndpoint method');
+    }
 
     /**
      * Run the SOAP transaction

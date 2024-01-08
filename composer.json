@@ -29,6 +29,7 @@
   "require": {
     "php": "^7.1|^8.0",
     "ext-iconv": "*",
+    "ext-json": "*",
     "omnipay/common": "^3.0",
     "bytic/data-objects": "^1.0",
     "symfony/http-client": "^6.0",
@@ -37,6 +38,7 @@
   },
   "require-dev": {
     "ext-openssl": "*",
+    "ext-soap": "*",
     "omnipay/tests": " ^3|^4",
     "bytic/phpqatools": "^1.0",
     "mockery/mockery": "^1.0",
