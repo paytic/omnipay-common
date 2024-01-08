@@ -1,7 +1,10 @@
-<?php /** @noinspection PhpComposerExtensionStubsInspection */
+<?php
+/** @noinspection PhpComposerExtensionStubsInspection */
 
 namespace Paytic\Omnipay\Common\Message\Traits\Soap;
 
+use Exception;
+use Paytic\Omnipay\Common\Message\Traits\SendDataRequestTrait;
 use SoapClient;
 use SoapFault;
 
@@ -11,6 +14,8 @@ use SoapFault;
  */
 trait AbstractSoapRequestTrait
 {
+    use SendDataRequestTrait;
+
     /** @var  SoapClient */
     protected $soapClient;
 
@@ -43,7 +48,7 @@ trait AbstractSoapRequestTrait
      * Build the SOAP Client and the internal request object
      *
      * @return SoapClient
-     * @throws \Exception
+     * @throws Exception
      */
     public function buildSoapClient()
     {
@@ -64,11 +69,11 @@ trait AbstractSoapRequestTrait
 
         try {
             // create the soap client
-            $this->soapClient = new \SoapClient($this->getSoapEndpoint(), $options);
+            $this->soapClient = new SoapClient($this->getSoapEndpoint(), $options);
 
             return $this->soapClient;
         } catch (SoapFault $sf) {
-            throw new \Exception($sf->getMessage(), $sf->getCode());
+            throw new Exception($sf->getMessage(), $sf->getCode());
         }
     }
 
@@ -77,7 +82,7 @@ trait AbstractSoapRequestTrait
      *
      * @param array $data
      * @return AbstractSoapResponseTrait
-     * @throws \Exception
+     * @throws Exception
      */
     public function sendData($data)
     {
@@ -86,10 +91,12 @@ trait AbstractSoapRequestTrait
 
         // Replace this line with the correct function.
         $response = $this->runTransaction($soapClient, $data);
-
-        $class = $this->getResponseClass();
-
-        return $this->response = new $class($this, $response);
+        if (is_object($response)) {
+            $data = json_decode(json_encode($data), true);
+        } else {
+            $data = $response;
+        }
+        return $this->sendDataResponse($data);
     }
 
     protected function getSoapOptionsGeneric(): array
@@ -111,9 +118,9 @@ trait AbstractSoapRequestTrait
         } else {
             $options['cache_wsdl'] = WSDL_CACHE_BOTH;
         }
+        $options['cache_wsdl'] = WSDL_CACHE_NONE;
 
         return $options;
-
     }
 
     protected function getSoapOptions(): array
@@ -134,7 +141,7 @@ trait AbstractSoapRequestTrait
      * @param SoapClient $soapClient
      * @param array $data
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     abstract protected function runTransaction($soapClient, $data);
 
@@ -143,12 +150,13 @@ trait AbstractSoapRequestTrait
      * @param $method
      * @param array $data
      * @return mixed
-     * @throws \Exception
+     * @throws Exception
      */
     protected function runSoapTransaction($soapClient, $method, $data = [])
     {
         try {
-            return $soapClient->__soapCall($method, $data);
+            return $soapClient->$method($data);
+//            return $soapClient->__soapCall($method, $data);
         } catch (SoapFault $soapFault) {
             return [
                 "code" => $soapFault->faultcode,

@@ -16,18 +16,23 @@ trait SendDataRequestTrait
     /**
      * Send the request with specified data
      *
-     * @param  mixed $data The data to send
+     * @param mixed $data The data to send
      * @return bool
      */
     public function sendData($data)
     {
         if (is_array($data) && count($data)) {
-            $class = $this->getResponseClass();
-
-            return $this->response = new $class($this, $data);
+            return $this->sendDataResponse($data);
         }
 
         return false;
+    }
+
+    protected function sendDataResponse($data)
+    {
+        $class = $this->getResponseClass();
+
+        return $this->response = new $class($this, $data);
     }
 
     /**
