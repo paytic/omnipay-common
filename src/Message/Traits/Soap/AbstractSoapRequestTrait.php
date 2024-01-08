@@ -93,7 +93,7 @@ trait AbstractSoapRequestTrait
         // Replace this line with the correct function.
         $response = $this->runTransaction($soapClient, $data);
         if (is_object($response)) {
-            $data = json_decode(json_encode($data), true);
+            $data = json_decode(json_encode($response), true);
         } else {
             $data = $response;
         }
