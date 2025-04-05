@@ -32,8 +32,8 @@
     "ext-json": "*",
     "omnipay/common": "^3.0",
     "bytic/data-objects": "^1.0",
-    "symfony/http-client": "^6.0",
-    "symfony/dotenv": "^6.0",
+    "symfony/http-client": "^6.0|^7.0",
+    "symfony/dotenv": "^6.0|^7.0",
     "phpseclib/phpseclib": "~3.0"
   },
   "require-dev": {
@@ -50,7 +50,12 @@
     "sort-packages": true,
     "allow-plugins": {
       "php-http/discovery": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true,
+      "ergebnis/composer-normalize": true,
+      "bytic/phpqatools": true
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
