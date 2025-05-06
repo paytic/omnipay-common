@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tests/src" isTestSource="true" packagePrefix="Paytic\Omnipay\Common\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Paytic\Omnipay\Common\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/fixtures" isTestSource="true" packagePrefix="Paytic\Omnipay\Common\Tests\Fixtures\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/clue/stream-filter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
@@ -27,7 +29,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
@@ -48,6 +49,52 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php83" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/dns" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/parallel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/pipeline" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/serialization" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/sync" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bytic/phpqatools" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/clue/ndjson-react" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/danog/advanced-json-rpc" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/daverandom/libdns" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ergebnis/composer-normalize" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ergebnis/json" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ergebnis/json-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ergebnis/json-pointer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ergebnis/json-printer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ergebnis/json-schema-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/evenement/evenement" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fidry/cpu-core-counter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kelunik/certificate" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/uri-interfaces" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/localheinz/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/madewithlove/license-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/marc-mabe/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/extension-installer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan-mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpstan-phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psalm/plugin-mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psalm/plugin-phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/child-process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/dns" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/event-loop" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/revolt/event-loop" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/array-to-xml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php84" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

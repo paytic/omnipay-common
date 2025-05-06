@@ -2,9 +2,9 @@
 
 namespace Paytic\Omnipay\Common\Message\Traits\HtmlResponses;
 
+use Omnipay\Common\Message\RequestInterface;
 use Paytic\Omnipay\Common\Message\Traits\DataAccessorsTrait;
 use Paytic\Omnipay\Common\Message\Traits\HasViewTrait;
-use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class RedirectHtmlTrait
@@ -54,6 +54,18 @@ trait ConfirmHtmlTrait
         }
 
         return $type;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getMessageDescription()
+    {
+        $message = null;
+        if (method_exists($this, 'getMessage')) {
+            $message = $this->getMessage();
+        }
+        return $message;
     }
 
     /**
