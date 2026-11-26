@@ -20,5 +20,12 @@
 [link-downloads]: https://packagist.org/packages/bytic/omnipay-common
 [link-author]: https://github.com/bytic
 
+### HTTP requests
+
+Gateways accept Symfony HTTP Foundation requests and PSR-7 server requests assigned
+by integrations such as bytic/http. PSR-7 requests are converted to Symfony requests
+when creating an Omnipay message, including any changes made through PSR-7 methods.
+Omnipay's gateway constructor still expects a Symfony request.
+
 ### Inspiration
 * https://github.com/Payum/Payum

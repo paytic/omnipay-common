@@ -16,4 +16,9 @@ class PurchaseRequest extends CommonAbstractRequest
     use SendDataRequestTrait;
     use HasLanguageRequestTrait;
     use RequestDataGetWithValidationTrait;
+
+    public function getHttpRequest()
+    {
+        return $this->httpRequest;
+    }
 }
