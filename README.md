@@ -23,8 +23,10 @@
 ### HTTP requests
 
 Gateways accept Symfony HTTP Foundation requests and PSR-7 server requests assigned
-by integrations such as bytic/http. PSR-7 requests are converted to Symfony requests
-when creating an Omnipay message, including any changes made through PSR-7 methods.
+by integrations such as bytic/http. For bytic/http's `PsrRequest`, the wrapped
+Symfony request is used directly. Changes held only in its PSR-7 representation,
+such as `withBody()` or `withUri()`, are not reflected in the Symfony request.
+Other PSR-7 server requests are converted using Symfony's PSR HTTP message bridge.
 Omnipay's gateway constructor still expects a Symfony request.
 
 ### Inspiration

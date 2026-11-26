@@ -25,7 +25,7 @@ class AbstractGatewayTest extends AbstractTest
         self::assertTrue($gateway->getTestMode());
     }
 
-    public function testByticPsrRequestIncludesPsrChanges()
+    public function testByticPsrRequestUsesWrappedSymfonyRequest()
     {
         $original = new PsrRequest(Request::create('/callback?old=1', 'POST', ['old' => 'value']));
         $httpRequest = $original
@@ -39,12 +39,12 @@ class AbstractGatewayTest extends AbstractTest
         $message = $gateway->makeRequest();
         $converted = $message->getHttpRequest();
 
-        self::assertInstanceOf(Request::class, $converted);
+        self::assertSame($httpRequest->getSymfonyRequest(), $converted);
         self::assertSame('123', $converted->query->get('reference'));
         self::assertSame('paid', $converted->request->get('status'));
         self::assertSame('callback', $converted->attributes->get('route'));
         self::assertSame('signed', $converted->headers->get('X-Callback'));
-        self::assertSame('payload', $converted->getContent());
+        self::assertSame('', $converted->getContent());
         self::assertSame('1', $original->getQueryParams()['old']);
 
         $nextMessage = $gateway->makeRequest();
